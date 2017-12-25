@@ -19,7 +19,7 @@
 @property (nonatomic ,strong)NSArray *dataArray;
 @property (nonatomic ,assign)BOOL showSongsList;
 
-@property (nonatomic ,copy)void (^closeListTable)();
+@property (nonatomic ,copy)void (^closeListTable)(void);
 @property (nonatomic ,copy)void (^selectSongs)(MusicModel *);
 
 
@@ -27,7 +27,7 @@
 @implementation ListTable
 #pragma mark Public Methods
 
-- (void)selectSongSheet:(void(^)(MusicModel *model))selectBlock closeList:(void(^)())closeListBlock{
+- (void)selectSongSheet:(void(^)(MusicModel *model))selectBlock closeList:(void(^)(void))closeListBlock{
     self.selectSongs = selectBlock;
     self.closeListTable = closeListBlock;
 }
@@ -49,7 +49,7 @@
     return self;
 }
 - (void)listTableControls{
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor groupTableViewBackgroundColor];
 //    self.hidden = YES;
     [self addSubview:self.downMenu];
     [self addSubview:self.headerTitle];
@@ -61,8 +61,8 @@
     CGFloat self_w = CGRectGetWidth(self.frame);
     CGFloat self_h = CGRectGetHeight(self.frame);
     self.headerTitle.frame = CGRectMake(0.0f, 0.0f, self_w, 45.f);
-    self.downMenu.frame = CGRectMake(0.0f, self_h-35.0f, self_w, 35);
-    self.listTable.frame = CGRectMake(0, CGRectGetMaxY(self.headerTitle.frame), self_w, self_h-CGRectGetHeight(self.headerTitle.frame)-CGRectGetHeight(self.downMenu.frame));
+    self.downMenu.frame = CGRectMake(0.0f, self_h-35.0f, self_w, 35.f);
+    self.listTable.frame = CGRectMake(0, CGRectGetHeight(self.headerTitle.frame), self_w, self_h-CGRectGetHeight(self.headerTitle.frame)-CGRectGetHeight(self.downMenu.frame));
 
 }
 
@@ -92,7 +92,7 @@
         cell  = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIndetifier];
     }
     
-//    cell.backgroundColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
     MusicModel *model = self.dataArray[indexPath.row];
     cell.textLabel.text = model.song_name;
     cell.detailTextLabel.text = model.singer;
@@ -125,8 +125,8 @@
         _listTable.separatorInset = UIEdgeInsetsMake(0, 5, 0, 5);
         _listTable.delegate = self;
         _listTable.dataSource = self;
-        _listTable.tableFooterView = [UIView new];
-        _listTable.tableHeaderView = [UIView new];
+        _listTable.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+        _listTable.tableHeaderView = [[UIView alloc] initWithFrame:CGRectZero];
 
         
     }

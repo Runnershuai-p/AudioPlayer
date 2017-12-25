@@ -61,7 +61,7 @@ typedef NS_ENUM(NSInteger, AudioPlayerMode) {
 @property (nonatomic ,copy)void (^musicPlayEndBlock)(NSInteger playMode);
 
 
-- (void)addPlayerWithMusicModel:(NSString *)urlString success:(void (^)(CGFloat totalTime))successBlock failed:(void(^)())failedBlock;
+- (void)addPlayerWithMusicModel:(NSString *)urlString success:(void (^)(CGFloat totalTime))successBlock failed:(void(^)(void))failedBlock;
 
 
 + (instancetype)defaultOpeartion;

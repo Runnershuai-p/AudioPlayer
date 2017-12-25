@@ -78,7 +78,7 @@
     self.currentPlayModel = model;
     __weak typeof(self) weakSelf = self;
     __weak UIImageView *weakBgImageView = self.bgImageView;
-    //专辑图片
+    //专辑图片,毛玻璃
     [self.typeView.topView currentBackgroundImage:model completed:^(UIImage *rotatingImage) {
         weakBgImageView.image = [rotatingImage applyDarkEffect];
     }];
@@ -229,17 +229,25 @@
 - (void)playNextMusic{
     NSInteger playIndex = self.currentPlayModel.musicIndex==self.songsArr.count-1? 0:self.currentPlayModel.musicIndex+1;
     MusicModel *nextModel = self.songsArr[playIndex];
-    [self startingOpenMusicView:nextModel];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self startingOpenMusicView:nextModel];
+        
+    });
 }
 - (void)playLastMusic{
     NSInteger playIndex = self.currentPlayModel.musicIndex==0? self.songsArr.count-1:self.currentPlayModel.musicIndex-1;
     MusicModel *nextModel = self.songsArr[playIndex];
-    [self startingOpenMusicView:nextModel];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self startingOpenMusicView:nextModel];
+
+    });
 }
 - (void)playRandomMusic{
     NSInteger playIndex = arc4random()%self.songsArr.count;
     MusicModel *randomModel = self.songsArr[playIndex];
-    [self startingOpenMusicView:randomModel];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self startingOpenMusicView:randomModel];
+    });
 }
 
 - (void)dealloc{

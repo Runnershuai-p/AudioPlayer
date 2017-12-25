@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 typedef void(^ClientDownloadProgressBlock)(int64_t bytes,int64_t totalBytes);
 typedef void(^ClientDownloadCompleteBlock)(NSString *filePath, NSError *error);
-typedef NSDictionary *(^ClientDownloadConstructBlock)();
+typedef NSDictionary *(^ClientDownloadConstructBlock)(void);
 
 @interface ClientDownloadManager : NSObject
 @property (copy, nonatomic, readonly) NSArray *downloadTasks;

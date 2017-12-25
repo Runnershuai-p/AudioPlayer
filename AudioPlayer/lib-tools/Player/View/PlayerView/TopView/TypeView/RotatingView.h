@@ -10,8 +10,7 @@
 @class MusicModel;
 @interface RotatingView : UIView
 
-@property (nonatomic, strong) UIImageView *imageView;
-
+//@property (nonatomic, strong) UIImageView *imageView;
 
 @property (nonatomic, strong) UIImageView *albumImage;
 

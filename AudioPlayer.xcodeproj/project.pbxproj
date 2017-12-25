@@ -20,8 +20,6 @@
 		549473671FE4039500DCF0DA /* AudioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 549473631FE4039500DCF0DA /* AudioCell.m */; };
 		549473B91FE4043A00DCF0DA /* APIServiceUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5494736A1FE4043900DCF0DA /* APIServiceUrl.m */; };
 		549473BA1FE4043A00DCF0DA /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 5494736D1FE4043900DCF0DA /* NSString+URL.m */; };
-		549473BD1FE4043A00DCF0DA /* ClientDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 549473751FE4043900DCF0DA /* ClientDownloadManager.m */; };
-		549473BE1FE4043A00DCF0DA /* ClientRequestManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 549473781FE4043900DCF0DA /* ClientRequestManger.m */; };
 		549473BF1FE4043A00DCF0DA /* songs_list.png in Resources */ = {isa = PBXBuildFile; fileRef = 5494737B1FE4043900DCF0DA /* songs_list.png */; };
 		549473C01FE4043A00DCF0DA /* MusicPlayer_ inturn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5494737C1FE4043900DCF0DA /* MusicPlayer_ inturn@2x.png */; };
 		549473C11FE4043A00DCF0DA /* MusicPlayer_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5494737D1FE4043900DCF0DA /* MusicPlayer_next@2x.png */; };
@@ -54,8 +52,10 @@
 		549473DC1FE4043A00DCF0DA /* ItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 549473B31FE4043900DCF0DA /* ItemButton.m */; };
 		549473DD1FE4043A00DCF0DA /* UIView+POPUPAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 549473B71FE4043900DCF0DA /* UIView+POPUPAnimation.m */; };
 		549473DE1FE4043A00DCF0DA /* ListTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 549473B81FE4043900DCF0DA /* ListTable.m */; };
-		549473E41FE40B0400DCF0DA /* NSString+ClientDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 549473E11FE40B0400DCF0DA /* NSString+ClientDownload.m */; };
-		549473E51FE40B0400DCF0DA /* NSJSONSerialization+BSLJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 549473E31FE40B0400DCF0DA /* NSJSONSerialization+BSLJSON.m */; };
+		549473F01FE40E3900DCF0DA /* NSString+ClientDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 549473E91FE40E3900DCF0DA /* NSString+ClientDownload.m */; };
+		549473F11FE40E3900DCF0DA /* NSJSONSerialization+BSLJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 549473EB1FE40E3900DCF0DA /* NSJSONSerialization+BSLJSON.m */; };
+		549473F21FE40E3900DCF0DA /* ClientDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 549473EC1FE40E3900DCF0DA /* ClientDownloadManager.m */; };
+		549473F31FE40E3900DCF0DA /* ClientRequestManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 549473EF1FE40E3900DCF0DA /* ClientRequestManger.m */; };
 		7EC68AB16DD3904AE7518FE4 /* libPods-AudioPlayerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10186D48680E38E197145C7C /* libPods-AudioPlayerTests.a */; };
 /* End PBXBuildFile section */
 
@@ -102,10 +102,6 @@
 		5494736B1FE4043900DCF0DA /* APIServiceUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIServiceUrl.h; sourceTree = "<group>"; };
 		5494736D1FE4043900DCF0DA /* NSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URL.m"; sourceTree = "<group>"; };
 		5494736E1FE4043900DCF0DA /* NSString+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URL.h"; sourceTree = "<group>"; };
-		549473751FE4043900DCF0DA /* ClientDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientDownloadManager.m; sourceTree = "<group>"; };
-		549473761FE4043900DCF0DA /* ClientRequestManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientRequestManger.h; sourceTree = "<group>"; };
-		549473771FE4043900DCF0DA /* ClientDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientDownloadManager.h; sourceTree = "<group>"; };
-		549473781FE4043900DCF0DA /* ClientRequestManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientRequestManger.m; sourceTree = "<group>"; };
 		5494737B1FE4043900DCF0DA /* songs_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = songs_list.png; sourceTree = "<group>"; };
 		5494737C1FE4043900DCF0DA /* MusicPlayer_ inturn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_ inturn@2x.png"; sourceTree = "<group>"; };
 		5494737D1FE4043900DCF0DA /* MusicPlayer_next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MusicPlayer_next@2x.png"; sourceTree = "<group>"; };
@@ -156,10 +152,14 @@
 		549473B61FE4043900DCF0DA /* UIView+POPUPAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+POPUPAnimation.h"; sourceTree = "<group>"; };
 		549473B71FE4043900DCF0DA /* UIView+POPUPAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+POPUPAnimation.m"; sourceTree = "<group>"; };
 		549473B81FE4043900DCF0DA /* ListTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTable.m; sourceTree = "<group>"; };
-		549473E01FE40B0400DCF0DA /* NSJSONSerialization+BSLJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSJSONSerialization+BSLJSON.h"; sourceTree = "<group>"; };
-		549473E11FE40B0400DCF0DA /* NSString+ClientDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ClientDownload.m"; sourceTree = "<group>"; };
-		549473E21FE40B0400DCF0DA /* NSString+ClientDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ClientDownload.h"; sourceTree = "<group>"; };
-		549473E31FE40B0400DCF0DA /* NSJSONSerialization+BSLJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSJSONSerialization+BSLJSON.m"; sourceTree = "<group>"; };
+		549473E81FE40E3900DCF0DA /* NSJSONSerialization+BSLJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSJSONSerialization+BSLJSON.h"; sourceTree = "<group>"; };
+		549473E91FE40E3900DCF0DA /* NSString+ClientDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ClientDownload.m"; sourceTree = "<group>"; };
+		549473EA1FE40E3900DCF0DA /* NSString+ClientDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ClientDownload.h"; sourceTree = "<group>"; };
+		549473EB1FE40E3900DCF0DA /* NSJSONSerialization+BSLJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSJSONSerialization+BSLJSON.m"; sourceTree = "<group>"; };
+		549473EC1FE40E3900DCF0DA /* ClientDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientDownloadManager.m; sourceTree = "<group>"; };
+		549473ED1FE40E3900DCF0DA /* ClientRequestManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientRequestManger.h; sourceTree = "<group>"; };
+		549473EE1FE40E3900DCF0DA /* ClientDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientDownloadManager.h; sourceTree = "<group>"; };
+		549473EF1FE40E3900DCF0DA /* ClientRequestManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientRequestManger.m; sourceTree = "<group>"; };
 		A5C001B8F749C428B009B2D4 /* Pods-AudioPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayer/Pods-AudioPlayer.release.xcconfig"; sourceTree = "<group>"; };
 		AA27E0594C5E610DC161DC18 /* libPods-AudioPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AudioPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC6CD97F6EB9B544AA4E94DE /* Pods-AudioPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudioPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudioPlayer/Pods-AudioPlayer.debug.xcconfig"; sourceTree = "<group>"; };
@@ -293,23 +293,11 @@
 		5494736C1FE4043900DCF0DA /* incHelper */ = {
 			isa = PBXGroup;
 			children = (
+				549473E61FE40E3900DCF0DA /* HttpHelper */,
 				5494736D1FE4043900DCF0DA /* NSString+URL.m */,
 				5494736E1FE4043900DCF0DA /* NSString+URL.h */,
-				5494736F1FE4043900DCF0DA /* HttpManager */,
 			);
 			path = incHelper;
-			sourceTree = "<group>";
-		};
-		5494736F1FE4043900DCF0DA /* HttpManager */ = {
-			isa = PBXGroup;
-			children = (
-				549473DF1FE40B0400DCF0DA /* Unit */,
-				549473751FE4043900DCF0DA /* ClientDownloadManager.m */,
-				549473761FE4043900DCF0DA /* ClientRequestManger.h */,
-				549473771FE4043900DCF0DA /* ClientDownloadManager.h */,
-				549473781FE4043900DCF0DA /* ClientRequestManger.m */,
-			);
-			path = HttpManager;
 			sourceTree = "<group>";
 		};
 		549473791FE4043900DCF0DA /* Player */ = {
@@ -396,10 +384,10 @@
 			isa = PBXGroup;
 			children = (
 				549473991FE4043900DCF0DA /* MusicPlayer.h */,
-				5494739A1FE4043900DCF0DA /* MusicPlayerView.h */,
-				5494739B1FE4043900DCF0DA /* TopView */,
 				549473AB1FE4043900DCF0DA /* MusicPlayer.m */,
+				5494739A1FE4043900DCF0DA /* MusicPlayerView.h */,
 				549473AC1FE4043900DCF0DA /* MusicPlayerView.m */,
+				5494739B1FE4043900DCF0DA /* TopView */,
 				549473AD1FE4043900DCF0DA /* LowSide */,
 				549473B41FE4043900DCF0DA /* SongSheet */,
 			);
@@ -420,13 +408,13 @@
 			isa = PBXGroup;
 			children = (
 				5494739D1FE4043900DCF0DA /* TopHeaderView.h */,
-				5494739E1FE4043900DCF0DA /* TopBGView.h */,
-				5494739F1FE4043900DCF0DA /* RotatingView.m */,
-				549473A01FE4043900DCF0DA /* TypeView.h */,
-				549473A11FE4043900DCF0DA /* TopBGView.m */,
 				549473A21FE4043900DCF0DA /* TopHeaderView.m */,
-				549473A31FE4043900DCF0DA /* RotatingView.h */,
+				5494739E1FE4043900DCF0DA /* TopBGView.h */,
+				549473A11FE4043900DCF0DA /* TopBGView.m */,
+				549473A01FE4043900DCF0DA /* TypeView.h */,
 				549473A41FE4043900DCF0DA /* TypeView.m */,
+				549473A31FE4043900DCF0DA /* RotatingView.h */,
+				5494739F1FE4043900DCF0DA /* RotatingView.m */,
 			);
 			path = TypeView;
 			sourceTree = "<group>";
@@ -443,8 +431,8 @@
 		549473A81FE4043900DCF0DA /* LyricView */ = {
 			isa = PBXGroup;
 			children = (
-				549473A91FE4043900DCF0DA /* LyricBGView.m */,
 				549473AA1FE4043900DCF0DA /* LyricBGView.h */,
+				549473A91FE4043900DCF0DA /* LyricBGView.m */,
 			);
 			path = LyricView;
 			sourceTree = "<group>";
@@ -466,20 +454,32 @@
 			isa = PBXGroup;
 			children = (
 				549473B51FE4043900DCF0DA /* ListTable.h */,
+				549473B81FE4043900DCF0DA /* ListTable.m */,
 				549473B61FE4043900DCF0DA /* UIView+POPUPAnimation.h */,
 				549473B71FE4043900DCF0DA /* UIView+POPUPAnimation.m */,
-				549473B81FE4043900DCF0DA /* ListTable.m */,
 			);
 			path = SongSheet;
 			sourceTree = "<group>";
 		};
-		549473DF1FE40B0400DCF0DA /* Unit */ = {
+		549473E61FE40E3900DCF0DA /* HttpHelper */ = {
 			isa = PBXGroup;
 			children = (
-				549473E01FE40B0400DCF0DA /* NSJSONSerialization+BSLJSON.h */,
-				549473E11FE40B0400DCF0DA /* NSString+ClientDownload.m */,
-				549473E21FE40B0400DCF0DA /* NSString+ClientDownload.h */,
-				549473E31FE40B0400DCF0DA /* NSJSONSerialization+BSLJSON.m */,
+				549473E71FE40E3900DCF0DA /* Unit */,
+				549473EC1FE40E3900DCF0DA /* ClientDownloadManager.m */,
+				549473ED1FE40E3900DCF0DA /* ClientRequestManger.h */,
+				549473EE1FE40E3900DCF0DA /* ClientDownloadManager.h */,
+				549473EF1FE40E3900DCF0DA /* ClientRequestManger.m */,
+			);
+			path = HttpHelper;
+			sourceTree = "<group>";
+		};
+		549473E71FE40E3900DCF0DA /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				549473E81FE40E3900DCF0DA /* NSJSONSerialization+BSLJSON.h */,
+				549473E91FE40E3900DCF0DA /* NSString+ClientDownload.m */,
+				549473EA1FE40E3900DCF0DA /* NSString+ClientDownload.h */,
+				549473EB1FE40E3900DCF0DA /* NSJSONSerialization+BSLJSON.m */,
 			);
 			path = Unit;
 			sourceTree = "<group>";
@@ -810,6 +810,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				549473F21FE40E3900DCF0DA /* ClientDownloadManager.m in Sources */,
 				549473DB1FE4043A00DCF0DA /* ButtomBGView.m in Sources */,
 				549473D81FE4043A00DCF0DA /* MusicPlayer.m in Sources */,
 				549473D51FE4043A00DCF0DA /* TypeView.m in Sources */,
@@ -819,20 +820,19 @@
 				549473DE1FE4043A00DCF0DA /* ListTable.m in Sources */,
 				549473671FE4039500DCF0DA /* AudioCell.m in Sources */,
 				549473BA1FE4043A00DCF0DA /* NSString+URL.m in Sources */,
-				549473E41FE40B0400DCF0DA /* NSString+ClientDownload.m in Sources */,
+				549473F01FE40E3900DCF0DA /* NSString+ClientDownload.m in Sources */,
 				549473661FE4039500DCF0DA /* AudionListController.m in Sources */,
 				549473D01FE4043A00DCF0DA /* MusicModel.m in Sources */,
 				549473CF1FE4043A00DCF0DA /* MusicOpeartion.m in Sources */,
 				549473D31FE4043A00DCF0DA /* TopBGView.m in Sources */,
 				549473D61FE4043A00DCF0DA /* TitleView.m in Sources */,
 				549473D91FE4043A00DCF0DA /* MusicPlayerView.m in Sources */,
-				549473BD1FE4043A00DCF0DA /* ClientDownloadManager.m in Sources */,
+				549473F31FE40E3900DCF0DA /* ClientRequestManger.m in Sources */,
 				549473CE1FE4043A00DCF0DA /* NSString+time.m in Sources */,
 				549473DA1FE4043A00DCF0DA /* CircularItem.m in Sources */,
 				549473CD1FE4043A00DCF0DA /* UIImage+ImageEffects.m in Sources */,
+				549473F11FE40E3900DCF0DA /* NSJSONSerialization+BSLJSON.m in Sources */,
 				549473D41FE4043A00DCF0DA /* TopHeaderView.m in Sources */,
-				549473E51FE40B0400DCF0DA /* NSJSONSerialization+BSLJSON.m in Sources */,
-				549473BE1FE4043A00DCF0DA /* ClientRequestManger.m in Sources */,
 				549472681FE4003B00DCF0DA /* main.m in Sources */,
 				5494725A1FE4003B00DCF0DA /* AppDelegate.m in Sources */,
 				549473D21FE4043A00DCF0DA /* RotatingView.m in Sources */,
@@ -940,7 +940,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -989,7 +989,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

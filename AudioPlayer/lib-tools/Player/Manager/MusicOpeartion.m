@@ -16,7 +16,7 @@
 
 }
 
-@property (nonatomic, copy)void (^musicPlayFailed)();
+@property (nonatomic, copy)void (^musicPlayFailed)(void);
 
 @property (nonatomic, copy)void (^musicPlaySuccessfull)(CGFloat);
 
@@ -39,7 +39,7 @@
     return obj;
 }
 
-- (void)addPlayerWithMusicModel:(NSString *)urlString success:(void (^)(CGFloat totalTime))successBlock failed:(void(^)())failedBlock{
+- (void)addPlayerWithMusicModel:(NSString *)urlString success:(void (^)(CGFloat totalTime))successBlock failed:(void(^)(void))failedBlock{
     if (self.player) {
         self.player = nil;
         [self musicRemoveObserver];
@@ -88,9 +88,10 @@
 #pragma mark - KVO - status
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     AVPlayerItem *item = (AVPlayerItem *)object;
+    
     if ([keyPath isEqualToString:@"status"]) {
         if ([self.playerItem status] == AVPlayerStatusReadyToPlay) {
-            NSLog(@"AVPlayerStatusReadyToPlay");
+//            NSLog(@"AVPlayerStatusReadyToPlay");
             self.playerReadyStatus = AudioPlayerReadySuccess;
             CMTime duration = item.duration;// 获取视频总长度
             CGFloat totalTime = CMTimeGetSeconds(duration);//转换成秒

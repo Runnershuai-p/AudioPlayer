@@ -27,7 +27,7 @@
  * selectBlock：歌单选择回调
  * closeListBlock：歌单关闭回调
  */
-- (void)selectSongSheet:(void(^)(MusicModel *model))selectBlock closeList:(void(^)())closeListBlock;
+- (void)selectSongSheet:(void(^)(MusicModel *model))selectBlock closeList:(void(^)(void))closeListBlock;
 
 
 @end
