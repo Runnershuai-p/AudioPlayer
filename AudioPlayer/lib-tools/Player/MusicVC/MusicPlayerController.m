@@ -13,7 +13,6 @@
 
 
 
-
 @interface MusicPlayerController ()
 
 @property (nonatomic ,strong)MusicPlayer *musicView;
@@ -39,8 +38,12 @@
         [weakSelf.navigationController popViewControllerAnimated:YES];
     }];
 
-}
 
+}
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+
+}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];

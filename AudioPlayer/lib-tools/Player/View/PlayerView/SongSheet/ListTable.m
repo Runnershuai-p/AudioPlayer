@@ -6,6 +6,7 @@
 //  Copyright © 2017年 ClaudeLi. All rights reserved.
 //
 
+#define ISIPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 #import "ListTable.h"
 #import "MusicModel.h"
 #import "UIView+POPUPAnimation.h"
@@ -13,7 +14,7 @@
 @interface ListTable () <UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic ,strong)UITableView *listTable;
-@property (nonatomic ,strong)UIButton *downMenu;
+@property (nonatomic ,strong)UIButton *closeMenu;
 @property (nonatomic ,strong)UILabel *headerTitle;
 
 @property (nonatomic ,strong)NSArray *dataArray;
@@ -51,7 +52,7 @@
 - (void)listTableControls{
     self.backgroundColor = [UIColor groupTableViewBackgroundColor];
 //    self.hidden = YES;
-    [self addSubview:self.downMenu];
+    [self addSubview:self.closeMenu];
     [self addSubview:self.headerTitle];
     [self addSubview:self.listTable];
 }
@@ -60,26 +61,19 @@
     [super layoutSubviews];
     CGFloat self_w = CGRectGetWidth(self.frame);
     CGFloat self_h = CGRectGetHeight(self.frame);
+    CGFloat limt_buttom = ISIPhoneX? 34.f:0.f;
     self.headerTitle.frame = CGRectMake(0.0f, 0.0f, self_w, 45.f);
-    self.downMenu.frame = CGRectMake(0.0f, self_h-35.0f, self_w, 35.f);
-    self.listTable.frame = CGRectMake(0, CGRectGetHeight(self.headerTitle.frame), self_w, self_h-CGRectGetHeight(self.headerTitle.frame)-CGRectGetHeight(self.downMenu.frame));
-
+    CGFloat closeMenu_h = 35.f;
+    self.closeMenu.frame = CGRectMake(0.0f, self_h - limt_buttom - closeMenu_h, self_w, closeMenu_h);
+    
+    CGFloat list_y = CGRectGetMaxY(self.headerTitle.frame);
+    CGFloat list_h = CGRectGetMinY(self.closeMenu.frame)-list_y;
+    self.listTable.frame = CGRectMake(0,list_y , self_w, list_h);
 }
 
 
 
-
-
-
-
-
-
-
-
-
 #pragma mark - Table view data source
-
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataArray.count;
@@ -134,15 +128,15 @@
 }
 
 
-- (UIButton*)downMenu{
-    if (!_downMenu) {
-        _downMenu = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_downMenu setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
-        [_downMenu setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [_downMenu setTitle:@"关闭" forState:UIControlStateNormal];
-        [_downMenu addTarget:self action:@selector(closeListTableClick) forControlEvents:UIControlEventTouchUpInside];
+- (UIButton*)closeMenu{
+    if (!_closeMenu) {
+        _closeMenu = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_closeMenu setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
+        [_closeMenu setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_closeMenu setTitle:@"关闭" forState:UIControlStateNormal];
+        [_closeMenu addTarget:self action:@selector(closeListTableClick) forControlEvents:UIControlEventTouchUpInside];
     }
-    return _downMenu;
+    return _closeMenu;
 }
 - (UILabel*)headerTitle{
     if (!_headerTitle) {

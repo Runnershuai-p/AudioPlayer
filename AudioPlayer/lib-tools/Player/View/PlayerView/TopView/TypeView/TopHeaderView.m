@@ -6,9 +6,8 @@
 //  Copyright © 2017年 ClaudeLi. All rights reserved.
 //
 
+
 #import "TopHeaderView.h"
-
-
 
 #define LINE_h 30.0f
 @interface TopHeaderView ()
@@ -25,6 +24,7 @@
 @implementation TopHeaderView
 
 - (instancetype)initWithFrame:(CGRect)frame{
+
     self = [super initWithFrame:frame];
     if (self) {
         [self bsl_controls];

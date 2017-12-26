@@ -45,9 +45,6 @@
     [self addSubview:self.leftTime];
     [self addSubview:self.rightTime];
     [self addSubview:self.circularItem];
-    
-    
-    
 }
 
 - (void)setTotalTime:(float )totalTime{

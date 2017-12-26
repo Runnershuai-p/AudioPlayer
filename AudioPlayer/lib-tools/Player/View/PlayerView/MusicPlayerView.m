@@ -6,9 +6,10 @@
 //  Copyright © 2017年 ClaudeLi. All rights reserved.
 //
 
+
 #import "MusicPlayerView.h"
 
-
+#define ISIPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 #define BUTTOM_H 150.f
 //@interface MusicPlayerView  ()
 //
@@ -49,8 +50,10 @@
     CGFloat self_w = CGRectGetWidth(self.frame);
     CGFloat self_h = CGRectGetHeight(self.frame);
     self.bgImageView.frame = self.bounds;
-    self.titleView.frame = CGRectMake(0, 0, self_w, 64);
-    self.buttomView.frame = CGRectMake(0, self_h-BUTTOM_H, self_w, BUTTOM_H);
+    CGFloat nav_h = ISIPhoneX ? 88.f:64.f;
+    CGFloat limt_bottom = ISIPhoneX ? 34.f:0.f;
+    self.titleView.frame = CGRectMake(0, 0, self_w, nav_h);
+    self.buttomView.frame = CGRectMake(0, self_h- BUTTOM_H - limt_bottom, self_w, BUTTOM_H);
     self.typeView.frame = CGRectMake(0, CGRectGetMaxY(self.titleView.frame), self_w, CGRectGetMinY(self.buttomView.frame)-CGRectGetMaxY(self.titleView.frame));
     
     CGFloat showListTable_y = CGRectGetMidY(self.typeView.frame);

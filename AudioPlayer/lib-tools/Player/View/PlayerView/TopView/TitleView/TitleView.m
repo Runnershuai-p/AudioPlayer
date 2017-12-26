@@ -5,7 +5,7 @@
 //  Created by shuai pan on 2017/3/7.
 //  Copyright © 2017年 ClaudeLi. All rights reserved.
 //
-
+#define ISIPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 #import "TitleView.h"
 
 @interface TitleView  ()
@@ -46,10 +46,11 @@
     return self;
 }
 - (void)titleViewControls{
+    self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.35];
     [self addSubview:self.navigationItem];
-    [self addSubview:self.songerLab];
-    [self addSubview:self.songLab];
-    [self addSubview:self.dismissButton];
+    [self.navigationItem addSubview:self.songerLab];
+    [self.navigationItem addSubview:self.songLab];
+    [self.navigationItem addSubview:self.dismissButton];
 }
 
 - (void)layoutSubviews{
@@ -57,11 +58,14 @@
     
     CGFloat self_w = CGRectGetWidth(self.frame);
     CGFloat self_h = CGRectGetHeight(self.frame);
-    self.navigationItem.frame = CGRectMake(0, 0, self_w, self_h);
-    self.songLab.frame = CGRectMake(self_w/2-100, 20, 200, 20);
-    self.songerLab.frame = CGRectMake(self_w/2-100, CGRectGetMaxY(self.songLab.frame), 200,CGRectGetHeight(self.navigationItem.frame) -CGRectGetMaxY(self.songLab.frame)-5);
     
-    self.dismissButton.frame = CGRectMake(self_w-60-5 ,20, 60, self_h-20);
+    CGFloat navItem_y = ISIPhoneX ? 44.f:20.f;
+    self.navigationItem.frame = CGRectMake(0, navItem_y, self_w,self_h - navItem_y);
+    CGFloat nav_w = CGRectGetWidth(self.navigationItem.frame);
+    CGFloat nav_h = CGRectGetHeight(self.navigationItem.frame);
+    self.songLab.frame = CGRectMake(nav_w/2-100, 0.f, 200, nav_h/2);
+    self.songerLab.frame = CGRectMake(nav_w/2-100, CGRectGetMaxY(self.songLab.frame), 200,nav_h/2);
+    self.dismissButton.frame = CGRectMake(nav_w - 70.f,CGRectGetMinY(self.songLab.frame), 70.f, 30);
 }
 - (UILabel *)songerLab{
     if (!_songerLab) {
@@ -84,7 +88,6 @@
 - (UIView *)navigationItem{
     if (!_navigationItem) {
         _navigationItem = [[UIView alloc]initWithFrame:CGRectZero];
-        _navigationItem.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.35];
     }
     return _navigationItem;
 }

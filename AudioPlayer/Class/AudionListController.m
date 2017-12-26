@@ -5,6 +5,8 @@
 //  Created by shuai pan on 2017/12/15.
 //  Copyright © 2017年 foreveross. All rights reserved.
 //
+#define AdjustsScrollViewInsetNever(controller,view) if(@available(iOS 11.0, *)) {view.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;} else if([controller isKindOfClass:[UIViewController class]]) {controller.automaticallyAdjustsScrollViewInsets = false;}
+
 
 #import "AudionListController.h"
 //#import "AudioCell.h"
@@ -23,6 +25,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     self.navigationController.navigationBarHidden = NO;
+}
+- (void)viewSafeAreaInsetsDidChange {
+    [super viewSafeAreaInsetsDidChange];
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,7 +58,7 @@
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
     }];
-    
+ 
 }
 - (void)openMusicPlayer{
     MusicPlayerController *music = [[MusicPlayerController alloc]init];
